@@ -3,19 +3,62 @@
   "displayName": "CSS Variable Mapper",
   "description": "Maps HEX colors to CSS variables via JSON config.",
   "version": "1.0.0",
+  "publisher": "maximvovk",
   "engines": {
-    "vscode": "^1.109.0"
+    "vscode": "^1.108.0"
   },
+  "icon": "resources/icon.png",
+  "keywords": [
+    "css",
+    "variables",
+    "color",
+    "hex",
+    "mapper"
+  ],
   "categories": [
+    "Programming Languages",
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less",
+    "onLanguage:vue",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:svelte"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "css-variable-mapper.helloWorld",
         "title": "Hello World"
+      }
+    ],
+    "languages": [
+      {
+        "id": "cssmapper",
+        "extensions": [
+          ".cssmapperconfig"
+        ],
+        "icon": {
+          "light": "./resources/icon2.svg",
+          "dark": "./resources/icon2.svg"
+        },
+        "aliases": [
+          "CSS Mapper Config"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cssmapper",
+        "scopeName": "source.cssmapper",
+        "path": "./cssmapper.tmLanguage.json"
       }
     ]
   },
@@ -28,15 +71,19 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.109.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "typescript-eslint": "^8.54.0",
+    "@types/node": "^22.19.11",
+    "@types/vscode": "^1.109.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.39.2",
     "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "typescript-eslint": "^8.54.0"
   },
   "author": "Maksym Vovk",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
 }

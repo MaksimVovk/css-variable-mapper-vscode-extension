@@ -1,0 +1,9 @@
+{
+  "scopeName": "source.cssmapper",
+  "injectionSelector": "L:source.cssmapper",
+  "patterns": [
+    {
+      "include": "source.json"
+    }
+  ]
+}
