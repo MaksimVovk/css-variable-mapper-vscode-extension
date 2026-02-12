@@ -1,2 +1,2 @@
 # CSS-Variable-Mapper
-Automatically map HEX colors to your design system's CSS variables via JSON config.
+A VS Code extension that automatically maps HEX colors to your design system's CSS variables using a JSON configuration file
